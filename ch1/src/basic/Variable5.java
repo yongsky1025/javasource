@@ -22,6 +22,6 @@ public class Variable5 {
         // 상수 선언과 할당(대문자)
         final int MAX_SPEED = 20;
         System.out.println(MAX_SPEED);
-        // MAX_SPEED = 30;
+        // MAX_SPEED = 20;
     }
 }
