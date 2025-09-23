@@ -1,0 +1,10 @@
+jdk 설치
+java Development Kit
+temurin jdk 17 설치 : Open JDK //JDK는 유료, 무료로 'Open'을 사용
+
+git 설치
+git config --global user.name "yongcheon"
+git config --global user.email "qaz7984@gmail.com"
+
+git 환경설정 확인
+git config --list
