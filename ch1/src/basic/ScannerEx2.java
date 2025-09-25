@@ -18,6 +18,5 @@ public class ScannerEx2 {
         int input = Integer.parseInt(num); // String => int
         System.out.println("input = " + input);
         System.out.println("input = " + (input + 1)); // 35 + 1 => 36
-
     }
 }
