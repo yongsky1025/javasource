@@ -15,7 +15,7 @@ public class DoWhileEx1 {
         // 컴퓨터가 생성한 임의의 수 맞추기
         // ex) 컴67 나50 "좀더 큰 수 입력"
 
-        int answer = (int) (Math.random() * 100) + 1;
+        int answer = (int) ((Math.random() * 100) + 1);
         int num = 0;
 
         Scanner sc = new Scanner(System.in);

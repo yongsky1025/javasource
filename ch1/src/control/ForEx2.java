@@ -19,6 +19,7 @@ public class ForEx2 {
 
         // 구구단 출력
         // 3단
+
         for (int i = 1; i < 10; i++) {
             System.out.printf("3 * %d = %2d\n", i, (3 * i));
         }

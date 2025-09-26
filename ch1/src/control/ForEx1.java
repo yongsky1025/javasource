@@ -43,5 +43,11 @@ public class ForEx1 {
             sum += i;
             System.out.println("1 ~ 10까지 합 " + sum);
         }
+
+        // for문 안쪽뿐만 아니라 위쪽에서 변수선언해도 무관
+        //
+        // for (;;) {
+        // 정지하는 명령을 안쪽에 넣으면 정상적으로 작동.
+        // }
     }
 }
