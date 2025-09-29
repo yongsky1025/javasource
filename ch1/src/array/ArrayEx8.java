@@ -1,7 +1,5 @@
 package array;
 
-import java.util.Arrays;
-
 public class ArrayEx8 {
     public static void main(String[] args) {
         int[][] score = new int[3][4]; // 3행 4열
