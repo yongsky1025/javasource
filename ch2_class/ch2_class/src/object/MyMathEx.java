@@ -19,7 +19,7 @@ public class MyMathEx {
         System.out.println("곱셈결과 : " + result);
 
         double result2 = myMath.divide(8, 3);
-        System.out.println("나눗셈결과 : " + result);
+        System.out.println("나눗셈결과 : " + result2);
 
     }
 }

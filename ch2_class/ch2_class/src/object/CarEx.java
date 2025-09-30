@@ -2,6 +2,7 @@ package object;
 
 public class CarEx {
     public static void main(String[] args) {
+
         // Car 인스턴스 생성 : 생성자 호출됨
         Car car = new Car();
 
@@ -37,6 +38,33 @@ public class CarEx {
         // setter 메소드를 사용하여 변경 (null -> "green")
         car3.setColor("green");
         System.out.println("색상 지정 후 car3 : " + car3);
+
+        // println(car);
+        println(car2);
+        // println(car3);
+        // println(car4);
+        // println(car5);
+
+        // car2 println 호출 후 색상 값 변경
+        System.out.println(car2);
+
+    }
+
+    // Car 클래스
+    public static void println(Car car) {
+        // 원본의 값이 변경됨
+        car.setColor("빨강");
+
+        System.out.println("---------------------");
+        System.out.println("제조회사 : " + car.getCompanyName());
+        System.out.println("모델명 : " + car.getModel());
+        System.out.println("색상 : " + car.getColor());
+        System.out.println("최고속도 : " + car.getMaxSpeed());
+        System.out.println("---------------------");
+    }
+
+    // 설명하려고 잠깐 쓴것
+    public static void test(String str) {
 
     }
 }

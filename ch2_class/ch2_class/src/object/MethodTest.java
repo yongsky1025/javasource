@@ -1,7 +1,14 @@
 package object;
 
+// 메서드
+// 재사용성 높다
+// 중복된 코드 제거
+
+// 1. 인스턴스(멤버) 메서드 : 클래스 영역 => 인스턴스 생성 후
+// 2. 클래스 메서드 : 클래스 영역(static : "공유"의 의미) => 클래스가 메모리에 올라갈때(저장 ctrl + s)
+
 public class MethodTest {
-    // 두 개의 인자(==매개변수)를 받아서 덧셈 후 덧셈 결과 리턴
+    // 두 개의 인자(== 매개변수)를 받아서 덧셈 후 덧셈 결과 리턴
     int sum(int num1, int num2) {
         // int result = num1 + num2;
         // return result;
@@ -16,7 +23,7 @@ public class MethodTest {
         return num1 / num2;
     }
 
-    // 두 개의 인자(소수점 가능)(==매개변수)를 받아서 뺄셈 후 뺄셈 결과 리턴
+    // 두 개의 인자(소수점 가능)(== 매개변수)를 받아서 뺄셈 후 뺄셈 결과 리턴
     double subtract(double num1, double num2) {
         return num1 - num2;
     }

@@ -40,7 +40,7 @@ public class MyMathEx {
 
         } else if (mark.equals("/")) {
             result2 = myMath.divide(num1, num2);
-            System.out.println("나눗셈결과 : " + result);
+            System.out.println("나눗셈결과 : " + result2);
         }
 
     }
