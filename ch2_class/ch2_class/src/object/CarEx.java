@@ -60,7 +60,6 @@ public class CarEx {
         System.out.println("모델명 : " + car.getModel());
         System.out.println("색상 : " + car.getColor());
         System.out.println("최고속도 : " + car.getMaxSpeed());
-        System.out.println("---------------------");
     }
 
     // 설명하려고 잠깐 쓴것

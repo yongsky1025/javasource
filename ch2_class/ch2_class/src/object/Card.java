@@ -19,4 +19,10 @@ public class Card {
     int number;
     static int width = 100;
     static int height = 150;
+
+    @Override
+    public String toString() {
+        return "Card [kind=" + kind + ", number=" + number + "]";
+    }
+
 }
