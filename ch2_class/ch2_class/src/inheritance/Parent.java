@@ -8,8 +8,11 @@ package inheritance;
 // 상속불가
 // 생성자와 초기화 블럭은 상속되지 않는다
 
+// 단일상속
+
 public class Parent {
     int age;
+    String name;
 
     public Parent() {
         // super()가 숨겨져있음

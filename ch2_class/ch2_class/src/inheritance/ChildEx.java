@@ -9,10 +9,13 @@ public class ChildEx {
         // System.out.println(parent.age); // 5
         System.out.println("child age " + child.age); // 15
         child.play();
-        child.list();
+        child.list(); // 자식클래스
 
         System.out.println("child2 " + child2.age); // 0
-        child2.list();
-    }
+        child2.list(); // 부모클래스
 
+        System.out.println("name " + child.name);
+        System.out.println("name " + child.name);
+
+    }
 }

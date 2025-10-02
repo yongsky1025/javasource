@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.Scanner;
+
 // private : 해당 클래스내에서만 접근 가능
 public class Account {
     // 은행계좌
@@ -8,9 +10,22 @@ public class Account {
     private String owner;
     private long balance;
 
-    public Account(String accountNo, String owner, long balance) {
+    Scanner sc = new Scanner(System.in);
+
+    public Account(String accountNo) {
         this.accountNo = accountNo;
+    }
+
+    public Account(String accountNo, String owner) {
+        // this.accountNo = accountNo;
+        this(accountNo);
         this.owner = owner;
+    }
+
+    public Account(String accountNo, String owner, long balance) {
+        // this.accountNo = accountNo;
+        // this.owner = owner;
+        this(accountNo, owner);
         this.balance = balance;
     }
 

@@ -15,8 +15,8 @@ public class BonuspointAccount extends Account {
     @Override
     void deposit(long amount) {
         super.deposit(amount);
-        this.bonusPoint = amount / 100;
-        super.deposit(this.bonusPoint);
+
+        bonusPoint += (int) (amount * 0.01);
     }
 
     public long getBonusPoint() {
