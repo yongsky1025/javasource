@@ -9,5 +9,6 @@ public class ProductEx {
 
         System.out.println("잔액 : " + buyer.money);
         System.out.println("보너스포인트 : " + buyer.bonusPoint);
+
     }
 }
