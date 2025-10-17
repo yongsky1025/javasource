@@ -8,7 +8,7 @@ public class ListEx1 {
     public static void main(String[] args) {
         // String[] str1 = { "" };
         List<String> list1 = new ArrayList<>();
-        // 추가 add = append
+        // 추가 add = append개념
         list1.add("사과");
         list1.add("귤");
         list1.add("수박");
