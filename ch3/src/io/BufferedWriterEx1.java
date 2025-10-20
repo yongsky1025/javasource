@@ -26,15 +26,17 @@ public class BufferedWriterEx1 {
         try {
             FileWriter fw = new FileWriter("c:\\temp\\user.txt");
             BufferedWriter bw = new BufferedWriter(fw);
+
             do {
                 System.out.print(">> ");
-                input += sc.nextLine();
+                input = sc.nextLine();
                 bw.write(input);// content += input;
                 bw.newLine();
             } while (!input.equals("q"));
 
             bw.flush();
             bw.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
