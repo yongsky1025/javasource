@@ -34,7 +34,9 @@ public class ShopEx {
         // // 사용자 등록(PayType는 enum을 사용)
         // User user = new User("홍길동", PayType.CARD);
 
-        MyShop myShop = new MyShop();
+        // MyShop myShop = new MyShop(); // 배열
+
+        MyShop2 myShop = new MyShop2(); // list
         // 이름 지정
         myShop.setTitle("MyShop");
         // 사용자 등록

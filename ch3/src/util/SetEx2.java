@@ -29,12 +29,10 @@ public class SetEx2 {
         Collections.sort(list);
         System.out.println(list);
 
-        Comparator.sort()
-
-
         // list => set 변환
         Set<Integer> list2 = new HashSet<>(set);
         System.out.println(list2);
+
 
     }
 }
