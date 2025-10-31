@@ -1,0 +1,18 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\app\\yyc\\product\\21c\\dbhomeXE\\jdbc\\lib\\ojdbc11.jar",
+            "c:\\Users\\yyc\\Downloads\\lombok.jar",
+            "c:\\Users\\yyc\\Desktop\\soldesk\\lombok.jar",
+            "c:\\Users\\yyc\\Desktop\\soldesk\\mysql-connector-j-9.5.0\\mysql-connector-j-9.5.0\\mysql-connector-j-9.5.0.jar"
+        ],
+        "exclude": [
+            "c:\\Users\\yyc\\Downloads\\mysql-connector-j-9.5.0\\mysql-connector-j-9.5.0\\mysql-connector-j-9.5.0.jar"
+        ]
+    }
+}
