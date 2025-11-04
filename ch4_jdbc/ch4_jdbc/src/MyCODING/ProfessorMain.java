@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ProfessorMain {
@@ -11,14 +12,12 @@ public class ProfessorMain {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
         try {
             Class.forName("oracle.jdbc.OracleDriver");
-
             String url = "jdbc:oracle:thin:@localhost:1521:xe";
             String user = "javadb";
             String password = "12345";
@@ -28,20 +27,20 @@ public class ProfessorMain {
             boolean run = true;
 
             while (run) {
-                System.out.println("==================================");
+                System.out.println("==============================");
                 System.out.println("1. 교수정보 입력");
                 System.out.println("2. 교수정보 수정");
                 System.out.println("3. 교수정보 삭제");
                 System.out.println("4. 교수정보 조회");
                 System.out.println("5. 프로그램 종료");
-                System.out.println("==================================");
+                System.out.println("==============================");
                 System.out.print("선택 >> ");
-
                 int menu = Integer.parseInt(sc.nextLine());
                 switch (menu) {
                     case 1:
                         ProfessorDTO professorDTO = insert();
-                        String sql = "INSERT INTO PROFESSOR(prof_id,prof_name,DEPT_ID) values(?,?,?)";
+
+                        String sql = "INSERT INTO professor(prof_id, prof_name, dept_id ) VALUES(?,?,?)";
                         pstmt = con.prepareStatement(sql);
                         pstmt.setString(1, professorDTO.getProfId());
                         pstmt.setString(2, professorDTO.getProfName());
@@ -60,11 +59,12 @@ public class ProfessorMain {
                         pstmt.setString(2, professorDTO.getProfId());
                         rows = pstmt.executeUpdate();
                         System.out.println(rows > 0 ? "수정성공" : "수정실패");
+
                         break;
                     case 3:
                         String profId = delete();
 
-                        sql = "DELETE FROM professor WHERE prof_id = ?";
+                        sql = "Delete FROM professor WHERE prof_id =?";
                         pstmt = con.prepareStatement(sql);
                         pstmt.setString(1, profId);
                         rows = pstmt.executeUpdate();
@@ -74,7 +74,7 @@ public class ProfessorMain {
                     case 4:
                         profId = select();
 
-                        sql = "SELECT * FROM professor WHERE prof_id = ?";
+                        sql = "SELECT * FROM professor WHERE prof_id =?";
                         pstmt = con.prepareStatement(sql);
                         pstmt.setString(1, profId);
                         rs = pstmt.executeQuery();
@@ -83,14 +83,17 @@ public class ProfessorMain {
                             System.out.println("교수명 : " + rs.getString("prof_name"));
                             System.out.println("학과번호 : " + rs.getString("dept_id"));
                         }
+
                         break;
                     case 5:
                         run = false;
                         break;
+
                     default:
                         break;
                 }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -99,7 +102,7 @@ public class ProfessorMain {
                 rs.close();
                 pstmt.close();
                 con.close();
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
@@ -110,29 +113,26 @@ public class ProfessorMain {
         System.out.print("아이디 >> ");
         String profId = sc.nextLine();
         System.out.print("이름 >> ");
-        String name = sc.nextLine();
+        String profName = sc.nextLine();
         System.out.print("학과코드 >> ");
         String deptId = sc.nextLine();
 
-        return new ProfessorDTO(profId, name, deptId);
+        return new ProfessorDTO(profId, profName, deptId);
+
     }
 
-    public static ProfessorDTO update() {
-        // 수정할 교수 아이디 받기
+    public static String update() {
+        // 수정할 교수 아이디 받기 조회
         System.out.println("===== 수정할 교수 정보 =====");
         System.out.print("교수번호 >> ");
         String profId = sc.nextLine();
         System.out.print("변경학과 코드 >> ");
         String deptId = sc.nextLine();
-
-        ProfessorDTO professorDTO = new ProfessorDTO();
-        professorDTO.setProfId(profId);
-        professorDTO.setDeptId(deptId);
-        return professorDTO;
+        return profId;
     }
 
     public static String delete() {
-        // 삭제할 교수 아이디 받기
+        // 삭제할 교수 아이디 받기 조회
         System.out.println("===== 삭제할 교수 정보 =====");
         System.out.print("교수번호 >> ");
         String profId = sc.nextLine();
